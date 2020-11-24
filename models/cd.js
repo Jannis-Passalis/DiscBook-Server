@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       album: DataTypes.STRING,
       releaseYear: DataTypes.STRING,
       albumCover: DataTypes.STRING,
+      forSale: DataTypes.BOOLEAN,
     },
     {
       sequelize,
