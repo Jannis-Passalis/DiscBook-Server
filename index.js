@@ -1,8 +1,11 @@
 const express = require("express");
 const CdRouter = require("./routers/cd");
+const cors = require("cors");
 
 const app = express();
 const PORT = 4000;
+
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Hi from express");

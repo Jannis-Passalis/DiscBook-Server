@@ -16,4 +16,4 @@ async function CdWithListWithUser() {
   return users.map((user) => user.get({ plain: true }));
 }
 
-CdWithListWithUser().then((user) => console.log(user));
+// CdWithListWithUser().then((user) => console.log(user));
