@@ -23,9 +23,6 @@ module.exports = {
       picture: {
         type: Sequelize.STRING,
       },
-      forSale: {
-        type: Sequelize.BOOLEAN,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
