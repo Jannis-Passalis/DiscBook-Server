@@ -8,10 +8,11 @@ const PORT = 4000;
 
 app.use(cors());
 
-app.get("/", (req, res) => {
-  res.send("Hi from express");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hi from express");
+// });
 
+app.use("/", authRouter);
 app.use("/cds", CdRouter);
 
 app.listen(PORT, () => {
