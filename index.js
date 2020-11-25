@@ -1,5 +1,6 @@
 const express = require("express");
 const CdRouter = require("./routers/cd");
+const authRouter = require("./routers/auth");
 const cors = require("cors");
 
 const app = express();
