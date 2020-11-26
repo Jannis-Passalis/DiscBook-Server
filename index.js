@@ -1,6 +1,7 @@
 const express = require("express");
 const CdRouter = require("./routers/cd");
 const authRouter = require("./routers/auth");
+const userRouter = require("./routers/user");
 const cors = require("cors");
 const bodyParser = express.json();
 
@@ -16,6 +17,7 @@ app.use(bodyParser);
 
 app.use("/", authRouter);
 app.use("/cds", CdRouter);
+app.use("/user", userRouter);
 
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
