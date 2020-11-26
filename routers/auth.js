@@ -7,6 +7,7 @@ const router = new Router();
 
 router.post("/login", async (req, res, next) => {
   try {
+    // console.log("what is req.body", req.body);
     const { email, password } = req.body;
 
     if (!email || !password) {
