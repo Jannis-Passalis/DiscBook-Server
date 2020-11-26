@@ -32,7 +32,7 @@ module.exports = {
           album: "Pablo Honey",
           releaseYear: "1993",
           albumCover:
-            "https://en.wikipedia.org/wiki/Pablo_Honey#/media/File:Radiohead.pablohoney.albumart.jpg",
+            "https://upload.wikimedia.org/wikipedia/en/0/0f/Radiohead.pablohoney.albumart.jpg",
           forSale: false,
           listId: 2,
           createdAt: new Date(),
