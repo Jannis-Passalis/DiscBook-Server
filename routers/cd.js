@@ -40,4 +40,19 @@ router.post("/add", authMiddleware, async (req, res, next) => {
   }
 });
 
+router.delete("/delete", authMiddleware, async (req, res, next) => {
+  const { cdId } = req.body;
+
+  try {
+    const findCd = await Cd.findByPk(cdId);
+    if (!findCd) {
+      res.status(404).send("CD not found");
+    }
+    const deletedCd = await findCd.destroy();
+    res.json(deletedCd);
+  } catch (e) {
+    next(e);
+  }
+});
+
 module.exports = router;
