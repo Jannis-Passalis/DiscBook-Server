@@ -1,4 +1,5 @@
 const User = require("../models").user;
+const List = require("../models").list;
 const { toJWT } = require("../auth/jwt");
 const { Router } = require("express");
 const bcrypt = require("bcrypt");
@@ -46,6 +47,11 @@ router.post("/signup", async (req, res, next) => {
       password: bcrypt.hashSync(password, SALT_ROUNDS),
       name,
       picture,
+    });
+
+    const newList = await List.create({
+      title: `${name}'s list`,
+      userId: newUser.id,
     });
 
     delete newUser.dataValues["password"];

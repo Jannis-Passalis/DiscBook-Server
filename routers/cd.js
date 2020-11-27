@@ -40,8 +40,8 @@ router.post("/add", authMiddleware, async (req, res, next) => {
   }
 });
 
-router.delete("/delete", authMiddleware, async (req, res, next) => {
-  const { cdId } = req.body;
+router.delete("/delete/:cdId", authMiddleware, async (req, res, next) => {
+  const cdId = parseInt(req.params.cdId);
 
   try {
     const findCd = await Cd.findByPk(cdId);
