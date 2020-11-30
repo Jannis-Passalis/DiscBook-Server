@@ -41,6 +41,7 @@ router.post("/", authMiddleware, async (req, res, next) => {
         console.log("email sent");
       }
     });
+    res.status(200).send({ message: "Email sent" });
   } catch (e) {
     next(e);
   }
