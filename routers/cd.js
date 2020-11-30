@@ -10,6 +10,7 @@ router.get("/", async (req, res, next) => {
   try {
     const cds = await Cd.findAll({
       include: { model: List, include: { model: User } },
+      order: [["album", "ASC"]],
     });
     res.json(cds);
   } catch (e) {
