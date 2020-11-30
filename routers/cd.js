@@ -59,7 +59,12 @@ router.patch("/sell/update/:cdId", authMiddleware, async (req, res, next) => {
   const cdId = parseInt(req.params.cdId);
 
   try {
-    const findCd = await Cd.findByPk(cdId);
+    const findCd = await Cd.findByPk(cdId, {
+      include: {
+        model: List,
+        include: { model: User },
+      },
+    });
 
     if (!findCd) {
       res.status(404).send("CD not found");
