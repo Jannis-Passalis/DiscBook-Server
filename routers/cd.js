@@ -55,4 +55,26 @@ router.delete("/delete/:cdId", authMiddleware, async (req, res, next) => {
   }
 });
 
+router.patch("/sell/update/:cdId", authMiddleware, async (req, res, next) => {
+  const cdId = parseInt(req.params.cdId);
+
+  try {
+    const findCd = await Cd.findByPk(cdId);
+
+    if (!findCd) {
+      res.status(404).send("CD not found");
+    }
+    if (findCd.forSale === true) {
+      await findCd.update({ forSale: false });
+    } else if (findCd.forSale === false) {
+      await findCd.update({ forSale: true });
+    }
+    return res.status(200).send({
+      findCd,
+    });
+  } catch (e) {
+    next(e);
+  }
+});
+
 module.exports = router;
