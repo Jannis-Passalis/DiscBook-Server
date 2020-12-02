@@ -12,10 +12,6 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "use_env_variable": "postgres://mbtrqupb:JMcx4AfVGSd9yxaYs6rKSb4mmllCR6jw@hattie.db.elephantsql.com:5432/mbtrqupb"
   }
 }
